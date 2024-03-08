@@ -1,3 +1,5 @@
+import java.nio.charset.StandardCharsets
+
 group = "ee.ut"
 version = "0.0.1-SNAPSHOT"
 
@@ -10,6 +12,7 @@ plugins {
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
@@ -25,4 +28,8 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = StandardCharsets.UTF_8.name()
 }
