@@ -1,7 +1,7 @@
 group = "ee.ut"
 version = "0.0.1-SNAPSHOT"
 
-val assertjCoreVersion = "3.23.1"
+val assertjCoreVersion = "3.25.3"
 val junitJupiterVersion = "5.10.2"
 
 plugins {
