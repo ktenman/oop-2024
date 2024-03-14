@@ -22,7 +22,9 @@ public class Peaklass {
 				System.out.println(filmTitle + " IMDb hinnang: " + scraper.getImdbRating());
 			} else if (input.equalsIgnoreCase("j")) {
 				String randomFilm = FILMI_PEALKIRJAD[RANDOM.nextInt(FILMI_PEALKIRJAD.length)];
-				IMDbScraper scraper = new IMDbScraper(randomFilm);
+				IMDbScraper scraper = new IMDbScraper();
+				scraper.setFilmiPealkiri(randomFilm);
+				scraper.otsi();
 				System.out.println("Juhuslikult valitud film: " + randomFilm);
 				System.out.println("IMDb hinnang: " + scraper.getImdbRating());
 			} else {

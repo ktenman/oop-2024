@@ -10,22 +10,29 @@ public class IMDbScraper {
 	
 	private static final String URL = "https://www.imdb.com";
 	private static final String OTSINGU_URL = URL + "/find?q=";
-	private final String filmiPealkiri;
+	private String filmiPealkiri;
 	private String imdbRating;
+	
+	public IMDbScraper(String filmiPealkiri) {
+		this.filmiPealkiri = filmiPealkiri;
+		otsi();
+	}
+	
+	public IMDbScraper() {
+	}
 	
 	public String getImdbRating() {
 		return imdbRating;
 	}
 	
-	public IMDbScraper(String filmiPealkiri) {
-		if (filmiPealkiri == null || filmiPealkiri.isEmpty()) {
-			throw new IllegalArgumentException("Filmi pealkiri ei tohi olla tühi");
-		}
+	public void setFilmiPealkiri(String filmiPealkiri) {
 		this.filmiPealkiri = filmiPealkiri;
-		otsi();
 	}
 	
-	private void otsi() {
+	public void otsi() {
+		if (this.filmiPealkiri == null || this.filmiPealkiri.isEmpty()) {
+			throw new IllegalArgumentException("Filmi pealkiri ei tohi olla tühi");
+		}
 		try {
 			Document document = Jsoup.connect(OTSINGU_URL + this.filmiPealkiri).get();
 			Element element = document.selectFirst("li a");
