@@ -1,20 +1,19 @@
 package ee.ut.oop.praktikum5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LõbustusPark {
-	private Vaateratas lõbustus;
+	private List<Lõbustus> lõbustused = new ArrayList<>();
 	
-	public LõbustusPark(Vaateratas vaateratas) {
-		this.lõbustus = vaateratas;
+	public LõbustusPark(Lõbustus... lõbustused) {
+		this.lõbustused.addAll(List.of(lõbustused));
 	}
 	
 	public void alustaSeiklust(Külastaja külastaja) {
-		System.out.println("alustan seiklust");
-		lõbustus.lõbusta(külastaja);
-		
-		külastaja.kõikKirjeldused().forEach(System.out::println);
-		
-		for (String kirjeldus : külastaja.kõikKirjeldused()) {
-			System.out.println(kirjeldus);
+		for (Lõbustus lõbustus : lõbustused) {
+			lõbustus.lõbusta(külastaja);
 		}
+		külastaja.kõikKirjeldused().forEach(System.out::println);
 	}
 }
