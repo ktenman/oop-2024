@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 
 import java.util.Scanner;
 
+/**
+ * Kinnisvara keskmise hinna arvutaja.
+ */
 public class KVScraper {
 	
 	private final String linn;
@@ -20,6 +23,12 @@ public class KVScraper {
 		this.linn = linn;
 	}
 	
+	/**
+	 * Tagastab hinna teksti põhjal arvuna.
+	 * Näiteks "125 000 €\n4 562 €/m²\nKuumakse 610 €" tagastab 125000.
+	 * @param text hinna tekst
+	 * @return hind arvuna
+	 */
 	public double hind(String text) {
 		try {
 			return Double.parseDouble(text.split(" €")[0].replace(" ", ""));

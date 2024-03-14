@@ -8,6 +8,10 @@ public class Peaklass {
 	private static final String[] FILMI_PEALKIRJAD = {"The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction", "Fight Club"};
 	private static final Random RANDOM = new Random();
 	
+	/**
+	 * Main meetod, mis küsib kasutajalt, kas soovitakse sisestada filmi pealkiri käsitsi või saada juhusliku filmi IMDb hinnang.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
@@ -24,7 +28,7 @@ public class Peaklass {
 				String randomFilm = FILMI_PEALKIRJAD[RANDOM.nextInt(FILMI_PEALKIRJAD.length)];
 				IMDbScraper scraper = new IMDbScraper();
 				scraper.setFilmiPealkiri(randomFilm);
-				scraper.otsi();
+				scraper.otsiReitingut();
 				System.out.println("Juhuslikult valitud film: " + randomFilm);
 				System.out.println("IMDb hinnang: " + scraper.getImdbRating());
 			} else {

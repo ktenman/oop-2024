@@ -6,6 +6,10 @@ import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 
+/**
+ * IMDbScraper on klass, mis võimaldab otsida IMDb-st filmi reitingut.
+ * Klassi konstruktor võtab argumendiks filmi pealkirja ja otsib sellele vastavat IMDb reitingut.
+ */
 public class IMDbScraper {
 	
 	private static final String URL = "https://www.imdb.com";
@@ -15,7 +19,7 @@ public class IMDbScraper {
 	
 	public IMDbScraper(String filmiPealkiri) {
 		this.filmiPealkiri = filmiPealkiri;
-		otsi();
+		otsiReitingut();
 	}
 	
 	public IMDbScraper() {
@@ -29,7 +33,10 @@ public class IMDbScraper {
 		this.filmiPealkiri = filmiPealkiri;
 	}
 	
-	public void otsi() {
+	/**
+	 * Otsib filmi IMDb reitingut.
+	 */
+	public void otsiReitingut() {
 		if (this.filmiPealkiri == null || this.filmiPealkiri.isEmpty()) {
 			throw new IllegalArgumentException("Filmi pealkiri ei tohi olla tühi");
 		}
