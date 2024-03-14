@@ -16,7 +16,7 @@ public class Peaklass {
 		while (true) {
 			System.out.println("Kas soovite sisestada filmi pealkirja käsitsi (k) või saada juhusliku (j)? Kirjutage 'exit', et lõpetada");
 			String sisend = scanner.nextLine();
-			if (sisend.equals("exit")) {
+			if ("exit".equals(sisend)) {
 				break;
 			} else if (sisend.equalsIgnoreCase("k")) {
 				System.out.println("Sisestage filmi pealkiri:");
