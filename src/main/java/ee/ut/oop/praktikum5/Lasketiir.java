@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Lasketiir implements Lõbustus {
 	
-	private Random random = new Random();
+	private final Random random = new Random();
 	
 	public void lõbusta(Külastaja külastaja) {
 		int sihtmärkideArv = random.nextInt(21);
