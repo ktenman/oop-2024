@@ -10,7 +10,6 @@ public class Peaklass {
 	
 	/**
 	 * Main meetod, mis küsib kasutajalt, kas soovitakse sisestada filmi pealkiri käsitsi või saada juhusliku filmi IMDb hinnang.
-	 * @param args
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

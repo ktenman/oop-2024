@@ -4,7 +4,8 @@
 
 ### Spring 2023/24 - Object-Oriented Programming (LTAT.03.003)
 
-This repository contains the Java source files for the practicum sessions of the course, which focus on various object-oriented programming tasks.
+This repository contains the Java source files for the practicum sessions of the course, which focus on various
+object-oriented programming tasks.
 
 ### How to Run
 

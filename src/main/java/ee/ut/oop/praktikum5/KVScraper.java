@@ -26,6 +26,7 @@ public class KVScraper {
 	/**
 	 * Tagastab hinna teksti põhjal arvuna.
 	 * Näiteks "125 000 €\n4 562 €/m²\nKuumakse 610 €" tagastab 125000.
+	 *
 	 * @param text hinna tekst
 	 * @return hind arvuna
 	 */
