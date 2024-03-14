@@ -35,7 +35,7 @@ public class IMDbScraper {
 	
 	private String otsiFilmiUrl() {
 		try {
-			Document document = Jsoup.connect(OTSINGU_URL + this.filmiPealkiri).get();
+			Document document = Jsoup.connect(OTSINGU_URL + filmiPealkiri).get();
 			Element element = document.selectFirst("li a");
 			if (element == null) {
 				throw new RuntimeException("Filmi URL-i ei leitud filmile: " + filmiPealkiri);
@@ -50,7 +50,7 @@ public class IMDbScraper {
 	 * Otsib filmi IMDb reitingut.
 	 */
 	public void otsiReitingut() {
-		if (this.filmiPealkiri == null || this.filmiPealkiri.isEmpty()) {
+		if (filmiPealkiri == null || filmiPealkiri.isEmpty()) {
 			throw new IllegalArgumentException("Filmi pealkiri ei tohi olla tühi");
 		}
 		try {
