@@ -33,6 +33,19 @@ public class IMDbScraper {
 		this.filmiPealkiri = filmiPealkiri;
 	}
 	
+	private String otsiFilmiUrl() {
+		try {
+			Document document = Jsoup.connect(OTSINGU_URL + this.filmiPealkiri).get();
+			Element element = document.selectFirst("li a");
+			if (element == null) {
+				throw new RuntimeException("Filmi URL-i ei leitud filmile: " + filmiPealkiri);
+			}
+			return URL + element.attr("href");
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	/**
 	 * Otsib filmi IMDb reitingut.
 	 */
@@ -41,11 +54,9 @@ public class IMDbScraper {
 			throw new IllegalArgumentException("Filmi pealkiri ei tohi olla tühi");
 		}
 		try {
-			Document document = Jsoup.connect(OTSINGU_URL + this.filmiPealkiri).get();
-			Element element = document.selectFirst("li a");
-			String href = element.attr("href");
-			document = Jsoup.connect(URL + href).get();
-			element = document.selectFirst("[data-testid=\"hero-rating-bar__aggregate-rating__score\"]");
+			String otsitudFilmiUrl = otsiFilmiUrl();
+			Document document = Jsoup.connect(otsitudFilmiUrl).get();
+			Element element = document.selectFirst("[data-testid=\"hero-rating-bar__aggregate-rating__score\"]");
 			if (element == null) {
 				throw new RuntimeException("IMDb rating ei leitud filmile: " + filmiPealkiri);
 			}
@@ -54,6 +65,5 @@ public class IMDbScraper {
 			throw new RuntimeException("IMDb ratingu leidmine ebaõnnestus", e);
 		}
 	}
-	
 	
 }
