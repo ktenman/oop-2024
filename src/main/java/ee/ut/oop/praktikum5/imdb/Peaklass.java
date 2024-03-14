@@ -15,21 +15,21 @@ public class Peaklass {
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
 			System.out.println("Kas soovite sisestada filmi pealkirja käsitsi (k) või saada juhusliku (j)? Kirjutage 'exit', et lõpetada");
-			String input = scanner.nextLine();
-			if (input.equals("exit")) {
+			String sisend = scanner.nextLine();
+			if (sisend.equals("exit")) {
 				break;
-			} else if (input.equalsIgnoreCase("k")) {
+			} else if (sisend.equalsIgnoreCase("k")) {
 				System.out.println("Sisestage filmi pealkiri:");
-				String filmTitle = scanner.nextLine();
-				IMDbScraper scraper = new IMDbScraper(filmTitle);
-				System.out.println(filmTitle + " IMDb hinnang: " + scraper.getImdbRating());
-			} else if (input.equalsIgnoreCase("j")) {
-				String randomFilm = FILMI_PEALKIRJAD[RANDOM.nextInt(FILMI_PEALKIRJAD.length)];
+				String sisestatudFilmiPealkiri = scanner.nextLine();
+				IMDbScraper scraper = new IMDbScraper(sisestatudFilmiPealkiri);
+				System.out.println(sisestatudFilmiPealkiri + " IMDb hinnang: " + scraper.getImdbHinnang());
+			} else if (sisend.equalsIgnoreCase("j")) {
+				String suvalineFilm = FILMI_PEALKIRJAD[RANDOM.nextInt(FILMI_PEALKIRJAD.length)];
 				IMDbScraper scraper = new IMDbScraper();
-				scraper.setFilmiPealkiri(randomFilm);
+				scraper.setFilmiPealkiri(suvalineFilm);
 				scraper.otsiReitingut();
-				System.out.println("Juhuslikult valitud film: " + randomFilm);
-				System.out.println("IMDb hinnang: " + scraper.getImdbRating());
+				System.out.println("Juhuslikult valitud film: " + suvalineFilm);
+				System.out.println("IMDb hinnang: " + scraper.getImdbHinnang());
 			} else {
 				System.out.println("Vigane sisend. Palun sisestage 'k', 'j' või 'exit'");
 			}

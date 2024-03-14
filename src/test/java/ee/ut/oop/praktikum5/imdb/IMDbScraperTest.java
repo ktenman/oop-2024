@@ -9,6 +9,6 @@ class IMDbScraperTest {
 	void getImdbRating() {
 		IMDbScraper scraper = new IMDbScraper("The Shawshank Redemption");
 		
-		Assertions.assertThat(scraper.getImdbRating()).isEqualTo("9.3/10");
+		Assertions.assertThat(scraper.getImdbHinnang()).isEqualTo("9.3/10");
 	}
 }

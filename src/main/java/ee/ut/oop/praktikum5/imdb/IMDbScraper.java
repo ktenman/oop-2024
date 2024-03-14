@@ -15,7 +15,7 @@ public class IMDbScraper {
 	private static final String URL = "https://www.imdb.com";
 	private static final String OTSINGU_URL = URL + "/find?q=";
 	private String filmiPealkiri;
-	private String imdbRating;
+	private String imdbHinnang;
 	
 	public IMDbScraper(String filmiPealkiri) {
 		this.filmiPealkiri = filmiPealkiri;
@@ -25,8 +25,8 @@ public class IMDbScraper {
 	public IMDbScraper() {
 	}
 	
-	public String getImdbRating() {
-		return imdbRating;
+	public String getImdbHinnang() {
+		return imdbHinnang;
 	}
 	
 	public void setFilmiPealkiri(String filmiPealkiri) {
@@ -49,7 +49,7 @@ public class IMDbScraper {
 			if (element == null) {
 				throw new RuntimeException("IMDb rating ei leitud filmile: " + filmiPealkiri);
 			}
-			this.imdbRating = element.text();
+			this.imdbHinnang = element.text();
 		} catch (IOException e) {
 			throw new RuntimeException("IMDb ratingu leidmine ebaõnnestus", e);
 		}
