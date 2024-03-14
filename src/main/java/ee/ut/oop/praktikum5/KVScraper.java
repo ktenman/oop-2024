@@ -42,6 +42,7 @@ public class KVScraper {
 			KVScraper KVScraper = new KVScraper(sisend);
 			System.out.println(KVScraper.arvutaKeskmineHind());
 		}
+		scanner.close();
 	}
 	
 	public double arvutaKeskmineHind() {

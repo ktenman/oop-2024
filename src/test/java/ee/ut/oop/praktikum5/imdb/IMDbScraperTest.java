@@ -1,8 +1,9 @@
-package ee.ut.oop.praktikum5;
+package ee.ut.oop.praktikum5.imdb;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 class IMDbScraperTest {
 	
