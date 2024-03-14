@@ -5,6 +5,8 @@ version = "0.0.1-SNAPSHOT"
 
 val assertjCoreVersion = "3.25.3"
 val junitJupiterVersion = "5.10.2"
+val jsoupVersion = "1.17.2"
+val selenideVersion = "7.2.1"
 
 plugins {
     java
@@ -21,6 +23,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jsoup:jsoup:$jsoupVersion")
+    implementation("com.codeborne:selenide:$selenideVersion")
     testImplementation("org.assertj:assertj-core:$assertjCoreVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
