@@ -17,8 +17,10 @@ public class Peaklass {
 		ViiviseHoiataja viiviseHoiataja = new ViiviseHoiataja(0.2);
 		SuurimaViiviseLeidja suurimaViiviseLeidja = new SuurimaViiviseLeidja();
 		
-		teosed.forEach(teos -> teos.arvutaViivis(viiviseHoiataja));
-		teosed.forEach(teos -> teos.arvutaViivis(suurimaViiviseLeidja));
+		for (Teos teos : teosed) {
+			teos.arvutaViivis(viiviseHoiataja);
+			teos.arvutaViivis(suurimaViiviseLeidja);
+		}
 		
 		System.out.println("Hoiatavad laenutajad: ");
 		viiviseHoiataja.getHoiatavadLaenutajad().forEach(System.out::println);
