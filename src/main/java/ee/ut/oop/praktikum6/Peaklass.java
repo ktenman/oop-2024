@@ -22,15 +22,13 @@ public class Peaklass {
 			teos.arvutaViivis(suurimaViiviseLeidja);
 		}
 		
-		System.out.println("Hoiatavad laenutajad: ");
-		viiviseHoiataja.getHoiatavadLaenutajad().forEach(System.out::println);
-		
+		System.out.println("Hoiatavad laenutajad: " + viiviseHoiataja.getHoiatavadLaenutajad());
 		suurimaViiviseLeidja.saadaHoiatus();
 	}
 	
 	public static List<Teos> loeTeosed(String failiNimi) throws IOException {
 		List<Teos> teosed = new ArrayList<>();
-		String tekst = Files.readString(Paths.get(failiNimi), StandardCharsets.UTF_8);
+		String tekst = Files.readString(Paths.get(failiNimi), StandardCharsets.UTF_8).replace("\r", "");
 		String[] read = tekst.split("\n");
 		for (String rida : read) {
 			String[] osad = rida.split("; ");
