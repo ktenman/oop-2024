@@ -34,11 +34,9 @@ public class InimineTest {
 		
 		try (DataInputStream sisendVoog = new DataInputStream(new FileInputStream(failiNimi))) {
 			String eesnimi = sisendVoog.readUTF();
-			System.out.println("Eesnimi: " + eesnimi);
 			String perenimi = sisendVoog.readUTF();
 			int lasteArv = sisendVoog.readInt();
-			System.out.println("Perenimi: " + perenimi);
-			System.out.println("Lastearv: " + lasteArv);
+			lapsed = new ArrayList<>();
 			for (int i = 0; i < lasteArv; i++) {
 				String laps = sisendVoog.readUTF();
 				lapsed.add(laps);
