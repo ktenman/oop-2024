@@ -9,7 +9,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Paroolid {
 	public static void main(String[] args) {
-		String sisendFail = "peidetud.txt";
+		String sisendFail = "peidetud2.txt";
 		String väljundFail = "paroolid.txt";
 		
 		otsiParoolid(sisendFail, väljundFail);
@@ -46,7 +46,6 @@ public class Paroolid {
 		} catch (Exception e) {
 			System.out.println("Teksti lugemine ebaõnnestus");
 			e.printStackTrace();
-			
 		}
 	}
 }
