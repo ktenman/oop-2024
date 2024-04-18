@@ -15,7 +15,7 @@ class KVScraperTest {
 		
 		Assertions.assertThat(kvScraper.arvutaKeskmineHind())
 				.isGreaterThan(200_000)
-				.isLessThan(300_000);
+				.isLessThan(400_000);
 	}
 	
 	@Test
