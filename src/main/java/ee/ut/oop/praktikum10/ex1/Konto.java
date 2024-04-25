@@ -1,4 +1,6 @@
-package ee.ut.oop.praktikum10;
+package ee.ut.oop.praktikum10.ex1;
+
+import ee.ut.oop.praktikum10.NegatiivneSummaErind;
 
 public class Konto {
 	private String omanikuNimi;
