@@ -9,6 +9,17 @@ class KVScraperTest {
 	KVScraper kvScraper = new KVScraper("Tallinn");
 	
 	@Test
+	void name() {
+		
+		
+		for (int i = 0; i < 100; i++) {
+			int köögiSulgemisaeg = (int) (19 + Math.random() * 21);
+			
+			System.out.println(köögiSulgemisaeg);
+		}
+	}
+	
+	@Test
 	void arvutaKeskmineHind() {
 		Configuration.headless = true;
 		Configuration.browser = "firefox";
