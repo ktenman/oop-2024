@@ -4,7 +4,7 @@ group = "ee.ut"
 version = "0.0.1-SNAPSHOT"
 
 val assertjCoreVersion = "3.26.3"
-val junitJupiterVersion = "5.11.0"
+val junitJupiterVersion = "5.11.2"
 val jsoupVersion = "1.18.1"
 val selenideVersion = "7.4.2"
 
